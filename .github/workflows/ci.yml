@@ -1,0 +1,28 @@
+name: CI rutinas-svc
+
+# se dispara con push a develop y con pull request hacia main
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-test:
+    name: Build y pruebas
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Instalar Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+
+      # corre unit tests + cucumber y valida cobertura JaCoCo (100% LINE)
+      - name: Compilar y testear
+        run: mvn -B verify
+        working-directory: ms/rutinas
