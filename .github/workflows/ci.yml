@@ -25,4 +25,4 @@ jobs:
       # corre unit tests + cucumber y valida cobertura JaCoCo (100% LINE)
       - name: Compilar y testear
         run: mvn -B verify
-        working-directory: ms/rutinas
+        

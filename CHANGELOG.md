@@ -1,0 +1,1 @@
+# Changelog — rutinas-svc ## [1.0.0] - 2026 - Versión inicial del microservicio rutinas (caso caso15 — FitLife). - Agregada versión visible en el header y corregido texto duplicado en la presentación. Guarda con Ctrl+S.
